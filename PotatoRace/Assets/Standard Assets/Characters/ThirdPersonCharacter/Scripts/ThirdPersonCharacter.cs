@@ -28,7 +28,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
+        float ylimiter;
 
 		void Start()
 		{
@@ -182,10 +182,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void ApplyExtraTurnRotation()
 		{
-			// help the character turn faster (this is in addition to root rotation in the animation)
-			float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
-			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
-		}
+            float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
+            ylimiter += m_TurnAmount * turnSpeed * Time.deltaTime;
+            ylimiter = Mathf.Clamp(ylimiter, -60, 60);
+            transform.rotation = Quaternion.Euler(0, ylimiter, 0);
+        }
 
 
 		public void OnAnimatorMove()
