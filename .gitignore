@@ -34,3 +34,19 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/PotatoRace/Assets/Scripts/CameraController.cs
+/PotatoRace/Assets/Scripts/CameraController.cs.meta
+/PotatoRace/Assets/Standard Assets/Characters/person.FBX
+/PotatoRace/Assets/Standard Assets/Characters/person.FBX.meta
+/PotatoRace/Assets/Standard Assets/Characters/New Animator Controller.controller
+/PotatoRace/Assets/Standard Assets/Characters/Walking.fbx
+/PotatoRace/Assets/Standard Assets/Characters/New Animator Controller.controller.meta
+/PotatoRace/Assets/Standard Assets/Characters/Walking.fbx.meta
+/PotatoRace/Assets/idle.fbx
+/PotatoRace/Assets/idle.fbx.meta
+/PotatoRace/Assets/jump.fbx
+/PotatoRace/Assets/jump.fbx.meta
+/PotatoRace/Assets/Main Camera.controller
+/PotatoRace/Assets/Main Camera.controller.meta
+/PotatoRace/Assets/New Animation.anim
+/PotatoRace/Assets/New Animation.anim.meta
