@@ -18,7 +18,7 @@ public class fol : MonoBehaviour {
 		 int i = 1;
         while (i < 2) {
             //if (Mathf.Abs(Input.GetAxis("Joy" + i + "X")) > 0.2F || Mathf.Abs(Input.GetAxis("Joy" + i + "Y")) > 0.2F)
-                Debug.Log(Input.GetJoystickNames()[i] + " is moved");
+                //Debug.Log(Input.GetJoystickNames()[i] + " is moved");
             
             i++;
         }
