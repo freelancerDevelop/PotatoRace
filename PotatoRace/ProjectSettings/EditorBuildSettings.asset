@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7af11e5cb33ecb9478fd5a1873d2f764
+  - enabled: 1
+    path: Assets/Scenes/SampleScene2.unity
+    guid: c3f7ed33d70153349bae7d2a2689a64f
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 678d462d33ebdd7419400a9476bf6759
+  - enabled: 1
+    path: Assets/Scenes/rip_potato.unity
+    guid: b21e12f4ffca0c54e96a5763a45008d8
   m_configObjects: {}

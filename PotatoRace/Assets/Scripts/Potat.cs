@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Potat : MonoBehaviour {
     public GameObject unipotat;
 	// Use this for initialization
@@ -14,16 +14,29 @@ public class Potat : MonoBehaviour {
 		
 	}
     private void OnTriggerEnter(Collider ferty)
-    {//
-        if(ferty.tag == "Fertyliser")
+    {
+        if (this.name == "potato1 A")
         {
-            GameObject.Destroy(ferty.gameObject);
-            unipotat.SetActive(true);
-            unipotat.transform.position = this.transform.position;
-            unipotat.transform.rotation = this.transform.rotation;
-            Destroy(this.gameObject);
-            
+            if (ferty.tag == "Fertyliser")
+            {
+                GameObject.Destroy(ferty.gameObject);
+                unipotat.SetActive(true);
+                unipotat.transform.position = this.transform.position;
+                unipotat.transform.rotation = this.transform.rotation;
+                Destroy(this.gameObject);
 
+
+            }
         }
+        
+
+    }
+    private void OnCollisionEnter(Collision potat)
+    {
+        if (potat.gameObject.tag == "fire"|| potat.gameObject.tag == "player")
+        {
+            SceneManager.LoadScene("rip_potato");
+        }
+
     }
 }
