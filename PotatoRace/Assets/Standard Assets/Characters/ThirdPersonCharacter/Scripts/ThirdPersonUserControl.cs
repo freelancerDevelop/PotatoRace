@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using System.Collections;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -13,7 +14,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
         public int playerNumber;
-        
+        GameObject[] players;
+       public bool gotCamera;
+
         private void Start()
         {
             // get the transform of the main camera
@@ -50,9 +53,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal_p"+playerNumber);
             float v = CrossPlatformInputManager.GetAxis("Vertical_p" + playerNumber);
+            bool cam = CrossPlatformInputManager.GetButtonDown("Fire3_p" + playerNumber);
+            if (cam)
+            {
+                players = GameObject.FindGameObjectsWithTag("player");
+                GameObject target = players[UnityEngine.Random.Range(0, 3)];
+                GameObject.FindGameObjectsWithTag("cameraBox")[0].transform.position = target.transform.position;
+                
+                cam = false;
+                gotCamera = false;
+                players[0].GetComponent<ThirdPersonUserControl>().gotCamera = false;
+                players[1].GetComponent<ThirdPersonUserControl>().gotCamera = false;
+                players[2].GetComponent<ThirdPersonUserControl>().gotCamera = false;
+                players[3].GetComponent<ThirdPersonUserControl>().gotCamera = false;
 
+
+                target.GetComponent<ThirdPersonUserControl>().gotCamera = true;
+            }
             bool crouch = Input.GetKey(KeyCode.C);
-
+            if (gotCamera)
+            {
+                GameObject.FindGameObjectsWithTag("cameraBox")[0].transform.position = this.transform.position;
+            }
             // calculate move direction to pass to character
             if (m_Cam != null)
             {

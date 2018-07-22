@@ -13,6 +13,7 @@ public class fol : MonoBehaviour
     {
 
         mainPlayer = GameObject.Find("MainCharacter");
+        this.transform.position = mainPlayer.transform.position;
 
     }
 
@@ -21,25 +22,12 @@ public class fol : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("player");
         potato = GameObject.FindGameObjectsWithTag("potato")[0];
-        int i = 2;
-        int activeplayers = 0;
-        while (i < 6)
-        {
-            if (Mathf.Abs(Input.GetAxis("Horizontal_p" + i)) > 0.2F || Mathf.Abs(Input.GetAxis("Vertical_p" + i)) > 0.2F)
-            {
-                Debug.Log(Input.GetJoystickNames()[i - 2] + " is moved");
-                activeplayers++;
-            }
-
-
-            i++;
-        }
 
         foreach (GameObject player in players)
         {
             float cameraToPotato = Vector3.Distance(mainPlayer.transform.position, potato.transform.position);
             if (cameraToPotato < Vector3.Distance(player.transform.position, potato.transform.position)
-                && Vector3.Distance(player.transform.position, potato.transform.position) < 240 && player)
+                && Vector3.Distance(player.transform.position, potato.transform.position) < 240)
             {
                 secondLastPlayer = mainPlayer;
                 mainPlayer = player;
@@ -58,7 +46,6 @@ public class fol : MonoBehaviour
 
 
         }
-        this.transform.position = mainPlayer.transform.position;
 
     }
 }
