@@ -37,3 +37,10 @@ sysinfo.txt
 
 /PotatoRace/Assets/Scripts/LatvianMovement.cs
 /PotatoRace/Assets/Scripts/LatvianMovement.cs.meta
+*.csproj
+*.log
+*.mdb
+*.dll
+PotatoRace/Library/metadata/52/521b611700410be45810047f0a74e899
+PotatoRace/Library/assetDatabase3
+PotatoRace/Library/assetDatabase3
