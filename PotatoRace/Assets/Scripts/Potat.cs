@@ -34,7 +34,7 @@ public class Potat : MonoBehaviour {
     private void OnCollisionEnter(Collision potat)
     {
         if (potat.gameObject.tag == "fire"|| potat.gameObject.tag == "player")
-        {
+        {//
             SceneManager.LoadScene("rip_potato");
         }
 
