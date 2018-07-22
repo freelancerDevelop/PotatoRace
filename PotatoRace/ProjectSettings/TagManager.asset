@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
-  - Fertyliser
-  - Unicorn
-  - Potato
+  - player
+  - potato
   layers:
   - Default
   - TransparentFX

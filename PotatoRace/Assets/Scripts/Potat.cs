@@ -14,7 +14,7 @@ public class Potat : MonoBehaviour {
 		
 	}
     private void OnTriggerEnter(Collider ferty)
-    {
+    {//
         if(ferty.tag == "Fertyliser")
         {
             GameObject.Destroy(ferty.gameObject);
