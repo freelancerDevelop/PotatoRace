@@ -18,7 +18,7 @@ public class FallingTrees : MonoBehaviour {
             tree.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
             tree.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             tree.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 100);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(4);
             tree.GetComponent<BoxCollider>().enabled = false;
             tree.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }

@@ -21,7 +21,7 @@ public class Potat : MonoBehaviour {
             unipotat.SetActive(true);
             unipotat.transform.position = this.transform.position;
             unipotat.transform.rotation = this.transform.rotation;
-            Destroy(GameObject.FindGameObjectWithTag("Potato"));
+            Destroy(this.gameObject);
             
 
         }
